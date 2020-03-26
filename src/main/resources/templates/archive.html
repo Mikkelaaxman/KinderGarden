@@ -4,19 +4,71 @@
 <head>
     <meta charset="UTF-8">
     <title>archive</title>
+    <link href="../static/css/archive.css" rel="stylesheet" th:href="@{/static/css/archive.css}" type="text/css" />
 </head>
 <body>
-<div class="main-wrapper"><input class="style47" type="search" placeholder="search">
-    <div class="archivesolerow1">
-        <ul class="style61">
-            <li><a class="style62">Ole</a></li>
-            <li><a class="style63">Peter</a></li>
-            <li><a class="style64">Katrine</a></li>
-        </ul>
-        <div class="archivesolerow1column1"><textarea class="style49" placeholder="Name"></textarea><textarea class="style53" placeholder="Parent Name"></textarea><textarea class="style55" placeholder="tlf nr."></textarea></div>
-        <div class="archivesolerow1column2">
-            <div class="archivesolerow1column2unsupported0 unsupported"></div><textarea class="style57" placeholder="Ole"></textarea><input class="style51" type="text" placeholder="Jens"><textarea class="style59" placeholder="22222222"></textarea></div>
+<section class= "selection-menu">
+    <div class="search-bar">
+        <form th:action="@{/archive/search}" th:object="${searchPattern}" method="post">
+            <input type="text" id="datePlanted" name="datePlanted" />
+            <button type="submit">Search</button>
+        </form>
     </div>
-</div>
+    <div class="tableDiv">
+        <table>
+            <tbody>
+            <tr th:each="person : ${list}" >
+                <td>
+                    <form method="get" th:action="@{/archive/get{id}(id=${person.id})}">
+                        <button class="list-button" type="submit"> <a th:text="${person.name}"></a> </button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+<section class="informationSection">
+    <div class="header-banner">
+
+    </div>
+    <div class="image-banner">
+        <div class="filler" style="float: left"></div>
+        <div class="image-container">
+            <img class="picture" alt="error" th:src="@{../static/images/person_1.png}" style="float: left"> <!-- todo replace with model supplied image-->
+        </div>
+    </div>
+
+    <div class="info">
+
+        <div class="info-1" >
+            <div class="first name-tag">
+                <p>First name</p>
+            </div>
+            <div class="first name-value" >
+                <p th:text="${chosen.name}"></p>
+            </div>
+        </div>
+
+
+        <div class="info-2">
+            <div class="last name-tag" >
+                <p> Last name</p>
+            </div>
+            <div class="last name-value" >
+                <p th:text="${chosen.name}"></p>
+            </div>
+        </div>
+
+
+        <div class="info-3">
+            <div class="info">
+                <p th:text="${chosen.info}"></p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
 </body>
 </html>

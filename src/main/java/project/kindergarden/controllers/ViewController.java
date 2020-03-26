@@ -14,8 +14,6 @@ public class ViewController
     @RequestMapping("/")
     public String index(Model model)
     {
-        System.out.println("received req");
-        model.addAttribute("name", "emil");
         return "index";
     }
 
