@@ -87,6 +87,18 @@ tr{
     height: 175px;
 }
 
+
 .info{
-    margin: 0% 20%;
+    width: 100%;
+    display: inline-grid;
+}
+
+.info div{
+     margin: 0% 20%;
+     padding: 0% 0%;
+     display: flex;
+ }
+
+.info div div{
+    border: 2px #959DAC;
 }
