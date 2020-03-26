@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      >
 <head>
     <meta charset="UTF-8">
     <title>index</title>
-    <link href="../static/css/startPage.css" rel="stylesheet" th:href="@{/css/startPage.css}" type="text/css"/>
+    <link href="../static/css/index.css" th:href="@{/static/css/index.css}" rel="stylesheet" type="text/css"   />
 </head>
 
 
@@ -14,7 +15,6 @@
     <section class="main">
         <div class="news" >
             <newsContainer>
-                <p  class="welcomeText" th:text="'hello '+ ${name}" style="background: #dfe3ee"> offline   </p>
                 <!-- this container have a picture using 3/4 of the space and a element box using 1/4. the element box has 3 boxes: 1. author, 2. post, 3. comments   width = 500  -->
                 <!-- img size = 900px 375px,  box size = 900px 125 px   -->
                 <elementBox>
@@ -29,7 +29,7 @@
                     <div>
                         <a href="/archive">
                             <button>
-                                <img src="../static/icons/archive.png" alt="error" th:src="@{/icons/archive.png} ">
+                                <img src="../static/icons/archive.png" alt="error" th:src="@{/icons/archive.png}">
                                 ARCHIVE
                             </button>
                         </a>

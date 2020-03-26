@@ -1,55 +1,78 @@
 package project.kindergarden.controllers;
 
 
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 @RestController
 @RequestMapping(value = "/archive")
 public class ArchiveController
 {
-    ArrayList<String> list = new ArrayList<>();
-    Model model;
+    ArrayList<test> list = new ArrayList<>();
+    ModelAndView mv;
+
     public ArchiveController()
     {
+        list.add(new test(1,"emil1", "pretty good at coding"));
+        list.add(new test(2,"emil2", "pretty good at html"));
+        list.add(new test(3,"emil3", "pretty handsome"));
+        list.add(new test(4,"emil4", "pretty pretty"));
+        list.add(new test(5,"emil5", "pretty clever"));
+        list.add(new test(6,"emil6", "pretty good humor"));
     }
 
 
     @GetMapping(value = "")
-    public ModelAndView start(Model model)
+    public ModelAndView getAll(Model model)
     {
-        System.out.println("starting");
         // sets a model and view
-        ModelAndView mv= new ModelAndView();
+        mv= new ModelAndView();
         mv.setViewName("archive");
-        this.model = model;
-
-        model.addAttribute("displayedChildren", list);
+        mv.addObject("chosen", list.get(0));
+        mv.addObject("list", list);
         return mv;
     }
 
-    @GetMapping(value = "/all")
-    public void getAll(Model model)
+
+    @GetMapping(value = "/get{id}")
+    public ModelAndView getPerson(@PathVariable("id") String id)
     {
+        mv= new ModelAndView();
+        mv.setViewName("archive");
+        mv.addObject("list", list);
 
+        System.out.println(mv.getModel().get("chosen"));
+        System.out.println("id -  "+ id);
 
-        list = (ArrayList<String>) model.getAttribute("displayedChildren");
-
-        list.add("tommy");
-        list.add("buddy");
-        list.add("pilar");
-        list.add("jonas");
-
-        return;
+        int i = Integer.parseInt(id);
+        mv.addObject("chosen", list.get(i-1)); // replace in model with a get by id
+        return mv;
     }
 
 
 
+
+    @GetMapping(value = "/search{person}")
+    public ModelAndView Search(Model model, @PathVariable Object person)
+    {
+        return mv;
+    }
+
+    @PostMapping(value = "/search")
+    public ModelAndView post(@ModelAttribute("searchPattern") String searchPattern)
+    {
+
+        mv = new ModelAndView();
+        mv.addObject("searchPattern", new String());
+        mv.setViewName("archive");
+        mv.addObject("list", list);
+        mv.addObject("chosen", list.get(0)); // replace in model with a get by id
+        return mv;
+    }
+
+
 }
+
