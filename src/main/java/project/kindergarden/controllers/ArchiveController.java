@@ -22,6 +22,48 @@ public class ArchiveController
         list.add(new test(4,"emil4", "pretty pretty"));
         list.add(new test(5,"emil5", "pretty clever"));
         list.add(new test(6,"emil6", "pretty good humor"));
+        list.add(new test(1,"emil1", "pretty good at coding"));
+        list.add(new test(2,"emil2", "pretty good at html"));
+        list.add(new test(3,"emil3", "pretty handsome"));
+        list.add(new test(4,"emil4", "pretty pretty"));
+        list.add(new test(5,"emil5", "pretty clever"));
+        list.add(new test(6,"emil6", "pretty good humor"));list.add(new test(1,"emil1", "pretty good at coding"));
+        list.add(new test(2,"emil2", "pretty good at html"));
+        list.add(new test(3,"emil3", "pretty handsome"));
+        list.add(new test(4,"emil4", "pretty pretty"));
+        list.add(new test(5,"emil5", "pretty clever"));
+        list.add(new test(6,"emil6", "pretty good humor"));list.add(new test(1,"emil1", "pretty good at coding"));
+        list.add(new test(2,"emil2", "pretty good at html"));
+        list.add(new test(3,"emil3", "pretty handsome"));
+        list.add(new test(4,"emil4", "pretty pretty"));
+        list.add(new test(5,"emil5", "pretty clever"));
+        list.add(new test(6,"emil6", "pretty good humor"));list.add(new test(1,"emil1", "pretty good at coding"));
+        list.add(new test(2,"emil2", "pretty good at html"));
+        list.add(new test(3,"emil3", "pretty handsome"));
+        list.add(new test(4,"emil4", "pretty pretty"));
+        list.add(new test(5,"emil5", "pretty clever"));
+        list.add(new test(6,"emil6", "pretty good humor"));list.add(new test(1,"emil1", "pretty good at coding"));
+        list.add(new test(2,"emil2", "pretty good at html"));
+        list.add(new test(3,"emil3", "pretty handsome"));
+        list.add(new test(4,"emil4", "pretty pretty"));
+        list.add(new test(5,"emil5", "pretty clever"));
+        list.add(new test(6,"emil6", "pretty good humor"));list.add(new test(1,"emil1", "pretty good at coding"));
+        list.add(new test(2,"emil2", "pretty good at html"));
+        list.add(new test(3,"emil3", "pretty handsome"));
+        list.add(new test(4,"emil4", "pretty pretty"));
+        list.add(new test(5,"emil5", "pretty clever"));
+        list.add(new test(6,"emil6", "pretty good humor"));list.add(new test(1,"emil1", "pretty good at coding"));
+        list.add(new test(2,"emil2", "pretty good at html"));
+        list.add(new test(3,"emil3", "pretty handsome"));
+        list.add(new test(4,"emil4", "pretty pretty"));
+        list.add(new test(5,"emil5", "pretty clever"));
+        list.add(new test(6,"emil6", "pretty good humor"));list.add(new test(1,"emil1", "pretty good at coding"));
+        list.add(new test(2,"emil2", "pretty good at html"));
+        list.add(new test(3,"emil3", "pretty handsome"));
+        list.add(new test(4,"emil4", "pretty pretty"));
+        list.add(new test(5,"emil5", "pretty clever"));
+        list.add(new test(6,"emil6", "pretty good humor"));
+
     }
 
 
