@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Schedule</title>
@@ -24,19 +25,8 @@
     <li>Su</li>
 </ul>
 
-<ul class="days">
-    <li><button>day 1</button></li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-    <li>5</li>
-    <li>6</li>
-    <li>7</li>
-    <li>8</li>
-    <li>9</li>
-    <li><span class="active">10</span></li>
-    <li>11</li>
-    ...etc
+<ul class="days" th:loop=""  th:each="day, iterStat : ${daysInMonth}">
+    <li><button th:text="${iterStat.index}"> day </button></li>
 </ul>
 </body>
 </html>
