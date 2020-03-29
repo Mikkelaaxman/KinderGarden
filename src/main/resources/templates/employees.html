@@ -1,18 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>employees</title>
+    <title>Employees</title>
+    <link href="../static/css/archive.css" rel="stylesheet" th:href="@{/static/css/employees.css}" type="text/css" />
 </head>
 <body>
-<div class="main-wrapper">
-    <div class="employeesrow0">
-        <div class="employeesrow0unsupported0 unsupported"></div>
-        <div class="employeesrow0column1"><img class="style69" src="http://tako.assets.yotako.io/images/brand/big-octo.png" alt="An amazing Yotako poulp"><textarea class="style66" placeholder="Noter"></textarea>
-            <p class="style65">Advarsel 1: Den 5/10/19 Råbte marco af et barn.&nbsp;&nbsp;</p>
-            <p class="style68">Marco bad om lønforhøjelse og fik det, ha n tjener nu 98 kr/t.</p>
+<section class= "selection-menu">
+    <div class="search-bar">
+        <form th:action="@{/employees/search}">
+            <input type="text" id="datePlanted" name="datePlanted" />
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div class="tableDiv">
+        <table>
+            <tbody>
+            <tr th:each="person : ${List}" >
+                <td>
+                    <form method="get" th:action="@{/employees/get-employee{id}(id=${person.id})}">
+                        <button class="list-button" type="submit"> <a th:text="${person.name}"></a> </button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+<section class="informationSection">
+    <div class="header-banner">
+
+    </div>
+    <div class="image-banner">
+        <div class="filler" style="float: left"></div>
+        <div class="image-container">
+            <img class="picture" alt="error" th:src="@{../static/images/person_1.png}" style="float: left"> <!-- todo replace with model supplied image-->
         </div>
     </div>
-</div>
+
+    <div class="info">
+
+        <div class="info-1" >
+            <div class="first name-tag">
+                <p>First name</p>
+            </div>
+            <div class="first name-value" >
+                <p th:text="${Chosen.name}"></p>
+            </div>
+        </div>
+
+
+        <div class="info-2">
+            <div class="last name-tag" >
+                <p> Last name</p>
+            </div>
+            <div class="last name-value" >
+                <p th:text="${Chosen.name}"></p>
+            </div>
+        </div>
+
+
+        <div class="info-3">
+            <div class="info">
+                <p th:text="${Chosen.info}"></p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
 </body>
 </html>

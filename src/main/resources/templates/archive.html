@@ -3,13 +3,13 @@
       xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>archive</title>
+    <title>Archives</title>
     <link href="../static/css/archive.css" rel="stylesheet" th:href="@{/static/css/archive.css}" type="text/css" />
 </head>
 <body>
 <section class= "selection-menu">
     <div class="search-bar">
-        <form th:action="@{/archive/search}" th:object="${searchPattern}" method="post">
+        <form >
             <input type="text" id="datePlanted" name="datePlanted" />
             <button type="submit">Search</button>
         </form>

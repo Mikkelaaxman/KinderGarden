@@ -116,10 +116,10 @@ tr{
 }
 
 .info div{
-     margin: 0% 20%;
-     padding: 0% 0%;
-     display: flex;
- }
+    margin: 0% 20%;
+    padding: 0% 0%;
+    display: flex;
+}
 
 .info div div {
     border: 2px #959DAC;
