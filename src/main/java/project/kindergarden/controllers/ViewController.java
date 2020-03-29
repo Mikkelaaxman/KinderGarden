@@ -22,29 +22,4 @@ public class ViewController
     {
         return "index";
     }
-
-
-    @RequestMapping("/archive")
-    public String archive(Model model)
-    {
-
-        return "archive";
-    }
-
-    @RequestMapping("/schedule")
-    public String schedule(Model model)
-    {
-
-        return "schedule";
-    }
-
-    @RequestMapping("/employees")
-    public String employees(Model model)
-    {
-
-        return "employees";
-    }
-
-
-
 }
