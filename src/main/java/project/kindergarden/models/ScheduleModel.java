@@ -1,7 +1,6 @@
 package project.kindergarden.models;
 
-public class EmployeeModel implements ModelInterface{
-
+public class ScheduleModel implements ModelInterface{
     @Override
     public void Create() {
 

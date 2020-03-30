@@ -1,6 +1,7 @@
 package project.kindergarden.models;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -8,5 +9,10 @@ import java.util.Objects;
  */
 public class ListUtil
 {
+    ArrayList<Objects> masterList = new ArrayList<>();
 
+    public List ListUtil(){
+
+        return masterList;
+    }
 }

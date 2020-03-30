@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class ChildModel implements ModelInterface {
-    ArrayList<String> list = new ArrayList<>();
 
     String firstName;
     String lastName;
@@ -14,24 +13,25 @@ public class ChildModel implements ModelInterface {
     Date birthDate;
     String note;
 
-    /**
-     *
-
-    Guardian attributes here?
-    */
 
     @Override
-    public void getList() {
+    public void Create() {
 
     }
 
     @Override
-    public void search() {
+    public void Read() {
 
     }
 
-    private String getChild(String s){
-        return "";
+    @Override
+    public void Update() {
+
+    }
+
+    @Override
+    public void Delete() {
+
     }
 
 }
