@@ -5,6 +5,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * Bindeled mellem controllers og models
+ */
 public class ConnectionInterface {
     String dbURL = "jdbc:mysql://localhost:3306/sampledb";
     String username = "root";

@@ -1,4 +1,4 @@
 package project.kindergarden.models;
 
-public class Contact {
+public class GuardianModel {
 }
