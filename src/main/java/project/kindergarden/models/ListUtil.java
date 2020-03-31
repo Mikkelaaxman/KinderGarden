@@ -15,4 +15,13 @@ public class ListUtil
 
         return masterList;
     }
+
+
+    public void CreateChild(String data){
+        ChildModel.Create(data);
+    }
+    public ChildModel ReadChild(int id){
+        return ChildModel.Read();
+    }
+
 }
