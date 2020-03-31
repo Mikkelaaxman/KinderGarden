@@ -25,8 +25,15 @@
     <li>Su</li>
 </ul>
 
-<ul class="days" th:loop=""  th:each="day, iterStat : ${daysInMonth}">
-    <li><button th:text="${iterStat.index}"> day </button></li>
+<ul class="days"  th:each="int, iterStat : ${daysInMonth}">
+    <li><button > </button></li>
+    <li th:if="${thisDay}!=0"  th:text="'day ' + (${iterStat.index}+1)">Mo</li>
+    <li>Tu</li>
+    <li>We</li>
+    <li>Th</li>
+    <li>Fr</li>
+    <li>Sa</li>
+    <li>Su</li>
 </ul>
 </body>
 </html>
