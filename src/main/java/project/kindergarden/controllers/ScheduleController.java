@@ -24,10 +24,10 @@ public class ScheduleController
             ModelAndView mv = new ModelAndView();
             mv.setViewName("schedule");
 
-            mv.addObject("thisYear", scheduleModel.getCurrentYear());
-            mv.addObject("thisMonth",  scheduleModel.getCurrentMonth());
-            mv.addObject("thisDay",  scheduleModel.getCurrentDay());
-            mv.addObject("daysInMonth", scheduleModel.totalDaysInMonth());
+            mv.addObject("thisYear", "placeholder");
+            mv.addObject("thisMonth",  "placeholder");
+            mv.addObject("thisDay",  "placeholder");
+            mv.addObject("daysInMonth", "placeholder");
 
 
 
