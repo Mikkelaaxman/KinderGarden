@@ -21,4 +21,32 @@ public class ScheduleModel{
     public void Delete() {
 
     }
+
+
+}
+
+
+class day
+{
+    int day;
+
+    public day(int weekday)
+    {
+        day = weekday;
+    }
+
+}
+
+class month{
+    public int[] days;
+
+    public month(int length)
+    {
+        days = new int[length];
+        for (int i = 0; i <days.length ; i++)
+        {
+            days[i] = i+1;
+        }
+
+    }
 }
