@@ -21,9 +21,10 @@ public class ChildModel{
     Date startDate;
     Date endDate;
     Date birthDate;
+    Boolean active;
     String note;
 
-    public void Create(int id, int[] gid, String fn, String ln, Gender gender, Date sd, Date ed, Date bd, String n) {
+    public void Create(int id, int[] gid, String fn, String ln, Gender gender, Date sd, Date ed, Date bd, Boolean active, String n) {
         this.child_Id = id;
         this.guardian_Id = gid;
         this.firstName = fn;
@@ -33,6 +34,7 @@ public class ChildModel{
         this.startDate = sd;
         this.endDate = ed; // TODO allow NULL??
         this.birthDate = bd;
+        this.active = active;
         this.note = n;
     }
 

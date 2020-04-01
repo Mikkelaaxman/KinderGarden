@@ -7,8 +7,7 @@ public class ContactModel {
     int contact_id;
     String phone;
     String email;
-    String address_1;
-    String address_2;
+    String address;
     String houseNumber;
     int zip;
     String city;
@@ -16,7 +15,6 @@ public class ContactModel {
     public void Create() {
 
     }
-
 
     public void Read() {
 
@@ -56,20 +54,12 @@ public class ContactModel {
         this.email = email;
     }
 
-    public String getAddress_1() {
-        return address_1;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAddress_1(String address_1) {
-        this.address_1 = address_1;
-    }
-
-    public String getAddress_2() {
-        return address_2;
-    }
-
-    public void setAddress_2(String address_2) {
-        this.address_2 = address_2;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getHouseNumber() {

@@ -1,5 +1,6 @@
 package project.kindergarden.models;
 
+//TODO Create schedule model
 public class ScheduleModel{
 
     public void Create() {

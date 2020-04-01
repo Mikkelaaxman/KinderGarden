@@ -19,9 +19,21 @@ public class ListUtil
         return masterList;
     }
 
-
-    public void CreateChild(int id, int[] gid, String fn, String ln, Gender gender, Date sd, Date ed, Date bd, String n){
-        new ChildModel().Create(id, gid, fn, ln, gender, sd, ed, bd, n); //TODO
+    /**
+     *
+     * @param id Childs ID
+     * @param gid One or more Guardians ID
+     * @param fn Firstname
+     * @param ln Lastname
+     * @param gender Gender
+     * @param sd Start date
+     * @param ed End date
+     * @param bd Birth date
+     * @param active Active or not active
+     * @param n Note
+     */
+    public void CreateChild(int id, int[] gid, String fn, String ln, Gender gender, Date sd, Date ed, Date bd, Boolean active, String n){
+        new ChildModel().Create(id, gid, fn, ln, gender, sd, ed, bd, active, n); //TODO
     }
     public void ReadChild(int id){
     }
