@@ -21,7 +21,7 @@ public class GuardianModel{
     int contact_Id;
 
 
-    public void Create(int[] child_Id, String firstName, String lastName, Gender gender) {
+    public void Create(int id, int[] child_Id, int contact_Id, String firstName, String lastName, Gender gender, int priority, String n) {
 
 
     }
