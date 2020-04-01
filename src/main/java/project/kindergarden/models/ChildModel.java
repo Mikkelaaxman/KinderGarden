@@ -7,7 +7,7 @@ import org.springframework.util.IdGenerator; //Brugbar?
 
 import java.util.Date;
 
-@EntityScan
+@EntityScan //Brugbar?
 public class ChildModel{
     @Id
     int child_Id;
@@ -15,7 +15,7 @@ public class ChildModel{
 
     String firstName;
     String lastName;
-    private enum gender {M,F};
+    private enum gender {M,F}
     Date startDate;
     Date endDate;
     Date birthDate;

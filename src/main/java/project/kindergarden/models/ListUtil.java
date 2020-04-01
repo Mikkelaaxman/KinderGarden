@@ -18,10 +18,10 @@ public class ListUtil
 
 
     public void CreateChild(String data){
-        ChildModel.Create(data);
+
     }
-    public ChildModel ReadChild(int id){
-        return ChildModel.Read();
+    public void ReadChild(int id){
+
     }
 
 }
