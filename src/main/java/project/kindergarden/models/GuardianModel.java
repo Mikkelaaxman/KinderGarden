@@ -1,6 +1,7 @@
 package project.kindergarden.models;
 
 import org.springframework.data.annotation.Id;
+import project.kindergarden.data.Gender;
 
 import java.util.Date;
 
@@ -8,9 +9,11 @@ public class GuardianModel{
     @Id
     int guardian_Id;
 
+    int[] child_Id;
+
     String firstName;
     String lastName;
-    private enum gender {M,F}
+    Gender gender;
     int priority;
     String note;
 
@@ -18,7 +21,8 @@ public class GuardianModel{
     int contact_Id;
 
 
-    public void Create() {
+    public void Create(int[] child_Id, String firstName, String lastName, Gender gender) {
+
 
     }
 
@@ -44,6 +48,12 @@ public class GuardianModel{
         this.guardian_Id = guardian_Id;
     }
 
+    public int[] getChild_Id() {
+        return child_Id;
+    }
+
+    public void setChild_Id(int[] child_Id) { this.child_Id = child_Id; }
+
     public String getFirstName() {
         return firstName;
     }
@@ -58,6 +68,14 @@ public class GuardianModel{
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 
     public int getPriority() {

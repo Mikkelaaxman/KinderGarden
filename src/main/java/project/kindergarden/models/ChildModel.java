@@ -4,6 +4,7 @@ package project.kindergarden.models;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.annotation.Id;
 import org.springframework.util.IdGenerator; //Brugbar?
+import project.kindergarden.data.Gender;
 
 import java.util.Date;
 
@@ -12,28 +13,22 @@ public class ChildModel{
     @Id
     int child_Id;
 
+    int[] guardian_Id;
 
     String firstName;
     String lastName;
-    private enum gender {M,F}
+    Gender gender;
     Date startDate;
     Date endDate;
     Date birthDate;
     String note;
 
-
-    private ChildModel(String fn, String ln){
+    public void Create(int id, int[] gid, String fn, String ln, Gender gender, Date sd, Date ed, Date bd, String n) {
+        this.child_Id = id;
+        this.guardian_Id = gid;
         this.firstName = fn;
         this.lastName = ln;
-    }
-    private ChildModel(){
-
-    }
-
-    public void Create(int id, String fn, String ln, gender g, Date sd, Date ed, Date bd, String n) {
-        this.firstName = fn;
-        this.lastName = ln;
-        //  this.gender = g;  //TODO Check ENUM how??
+        this.gender = gender;
         this.child_Id = id;
         this.startDate = sd;
         this.endDate = ed; // TODO allow NULL??
@@ -41,15 +36,15 @@ public class ChildModel{
         this.note = n;
     }
 
-        public static ChildModel Read() {
+    public static ChildModel Read() {
         return new ChildModel();
     }
 
 
-    public void Update(int id, String fn, String ln, gender g, Date sd, Date ed, Date bd, String n) {
+    public void Update(int id, String fn, String ln, Gender gender, Date sd, Date ed, Date bd, String n) {
         this.firstName = fn;
         this.lastName = ln;
-      //  this.gender = g;  //TODO Check ENUM how??
+        this.gender = gender;
         this.child_Id = id;
         this.startDate = sd;
         this.endDate = ed; // TODO allow NULL??
@@ -74,6 +69,14 @@ public class ChildModel{
 
     public void setChild_Id(int child_Id) {
         this.child_Id = child_Id;
+    }
+
+    public int[] getGuardian_Id() {
+        return guardian_Id;
+    }
+
+    public void setGuardian_Id(int[] guardian_Id) {
+        this.guardian_Id = guardian_Id;
     }
 
     public String getFirstName() {

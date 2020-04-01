@@ -1,6 +1,7 @@
 package project.kindergarden.models;
 
 import org.springframework.data.annotation.Id;
+import project.kindergarden.data.Gender;
 
 import java.util.Date;
 
@@ -10,7 +11,7 @@ public class EmployeeModel  {
 
     String firstName;
     String lastName;
-    private enum gender {M,F}
+    Gender gender;
     Date startDate;
     Date endDate;
     Date birthDate;
@@ -70,6 +71,14 @@ public class EmployeeModel  {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 
     public Date getStartDate() {

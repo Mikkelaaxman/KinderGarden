@@ -9,6 +9,7 @@ public class ContactModel {
     String email;
     String address_1;
     String address_2;
+    String houseNumber;
     int zip;
     String city;
 
@@ -69,6 +70,14 @@ public class ContactModel {
 
     public void setAddress_2(String address_2) {
         this.address_2 = address_2;
+    }
+
+    public String getHouseNumber() {
+        return houseNumber;
+    }
+
+    public void setHouseNumber(String houseNumber) {
+        this.houseNumber = houseNumber;
     }
 
     public int getZip() {
