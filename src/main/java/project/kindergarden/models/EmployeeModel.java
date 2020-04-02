@@ -3,7 +3,7 @@ package project.kindergarden.models;
 import org.springframework.data.annotation.Id;
 import project.kindergarden.data.Gender;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class EmployeeModel  {
     @Id
@@ -12,23 +12,41 @@ public class EmployeeModel  {
     String firstName;
     String lastName;
     Gender gender;
-    Date startDate;
-    Date endDate;
-    Date birthDate;
+    LocalDate startDate;
+    LocalDate endDate;
+    LocalDate birthDate;
     String note;
 
     //Title
     String title;
-    Date title_from;
-    Date title_to;
+    LocalDate title_from;
+    LocalDate title_to;
 
     //Salary
     int salary;
-    Date salary_from;
-    Date salary_to;
+    LocalDate salary_from;
+    LocalDate salary_to;
 
     //Contact
     int contact_Id;
+
+    public EmployeeModel(int employee_Id, String firstName, String lastName, Gender gender, LocalDate startDate, LocalDate endDate, LocalDate birthDate, String note, String title, LocalDate title_from, LocalDate title_to, int salary, LocalDate salary_from, LocalDate salary_to, int contact_Id) {
+        this.employee_Id = employee_Id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.birthDate = birthDate;
+        this.note = note;
+        this.title = title;
+        this.title_from = title_from;
+        this.title_to = title_to;
+        this.salary = salary;
+        this.salary_from = salary_from;
+        this.salary_to = salary_to;
+        this.contact_Id = contact_Id;
+    }
 
     public void Create() {
 
@@ -81,27 +99,27 @@ public class EmployeeModel  {
         this.gender = gender;
     }
 
-    public Date getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 
@@ -121,19 +139,19 @@ public class EmployeeModel  {
         this.title = title;
     }
 
-    public Date getTitle_from() {
+    public LocalDate getTitle_from() {
         return title_from;
     }
 
-    public void setTitle_from(Date title_from) {
+    public void setTitle_from(LocalDate title_from) {
         this.title_from = title_from;
     }
 
-    public Date getTitle_to() {
+    public LocalDate getTitle_to() {
         return title_to;
     }
 
-    public void setTitle_to(Date title_to) {
+    public void setTitle_to(LocalDate title_to) {
         this.title_to = title_to;
     }
 
@@ -145,19 +163,19 @@ public class EmployeeModel  {
         this.salary = salary;
     }
 
-    public Date getSalary_from() {
+    public LocalDate getSalary_from() {
         return salary_from;
     }
 
-    public void setSalary_from(Date salary_from) {
+    public void setSalary_from(LocalDate salary_from) {
         this.salary_from = salary_from;
     }
 
-    public Date getSalary_to() {
+    public LocalDate getSalary_to() {
         return salary_to;
     }
 
-    public void setSalary_to(Date salary_to) {
+    public void setSalary_to(LocalDate salary_to) {
         this.salary_to = salary_to;
     }
 
