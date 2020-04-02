@@ -8,9 +8,8 @@ import project.kindergarden.data.Gender;
 import java.time.LocalDate;
 import java.util.Date;
 
-@EntityScan //Brugbar?
-public class ChildModel {
-    @Id
+public class ChildModel implements Person{
+
     int child_Id;
 
     //Foreign Key
@@ -25,7 +24,41 @@ public class ChildModel {
     Boolean active;
     String note;
 
-    public ChildModel(int child_Id, int[] guardian_Id, String firstName, String lastName, Gender gender, LocalDate startDate, LocalDate endDate, LocalDate birthDate, Boolean active, String note) {
+    /**
+     public ChildModel Create(int id, int[] gid, String fn, String ln, Gender gender, Date sd, Date ed, Date bd, Boolean active, String n) {
+     return new ChildModel(id, gid, fn, ln, gender, sd, ed, bd, active, n);
+     }
+
+     public void Read() {
+
+     }
+
+
+     public void Update(int id, String fn, String ln, Gender gender, Date sd, Date ed, Date bd, String n) {
+
+     this.firstName = fn;
+     this.lastName = ln;
+     this.gender = gender;
+     this.startDate = sd;
+     this.endDate = ed; // TODO allow NULL??
+     this.birthDate = bd;
+     this.note = n;
+
+     }
+
+     public void Delete(int id) {
+     // SQL DROP CHILD WITH ID ?
+     }
+
+     **/
+
+    @Override
+    public Person create(int id, int[] children_Id, int contact_Id, String firstName, String lastName, Gender gender, int priority, String n, int[] guardian_Id, LocalDate startDate, LocalDate endDate, LocalDate birthDate, Boolean active, String note)
+    {
+        return new ChildModel(child_Id, guardian_Id, firstName,  lastName,  gender,  startDate,  endDate,  birthDate,  active, note);
+    }
+
+    private ChildModel(int child_Id, int[] guardian_Id, String firstName, String lastName, Gender gender, LocalDate startDate, LocalDate endDate, LocalDate birthDate, Boolean active, String note) {
         this.child_Id = child_Id;
         this.guardian_Id = guardian_Id;
         this.firstName = firstName;
@@ -38,33 +71,7 @@ public class ChildModel {
         this.note = note;
     }
 
-    /**
-    public ChildModel Create(int id, int[] gid, String fn, String ln, Gender gender, Date sd, Date ed, Date bd, Boolean active, String n) {
-        return new ChildModel(id, gid, fn, ln, gender, sd, ed, bd, active, n);
-    }
 
-    public void Read() {
-
-    }
-
-
-    public void Update(int id, String fn, String ln, Gender gender, Date sd, Date ed, Date bd, String n) {
-
-        this.firstName = fn;
-        this.lastName = ln;
-        this.gender = gender;
-        this.startDate = sd;
-        this.endDate = ed; // TODO allow NULL??
-        this.birthDate = bd;
-        this.note = n;
-
-    }
-
-    public void Delete(int id) {
-        // SQL DROP CHILD WITH ID ?
-    }
-
-**/
 
     /**************************************
      * GETTERS AND SETTERS BELOW
