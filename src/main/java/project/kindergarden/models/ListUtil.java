@@ -2,6 +2,7 @@ package project.kindergarden.models;
 
 import project.kindergarden.data.Gender;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -13,12 +14,8 @@ import java.util.Objects;
 public class ListUtil
 {
     ArrayList<Objects> masterList = new ArrayList<>();
-
-    public List ListUtil(){
-
-        return masterList;
-    }
-
+    List<ChildModel> childList = new ArrayList<>();
+    
     /**
      *
      * @param id Childs ID
@@ -32,17 +29,24 @@ public class ListUtil
      * @param active Active or not active
      * @param n Note
      */
-    public void CreateChild(int id, int[] gid, String fn, String ln, Gender gender, Date sd, Date ed, Date bd, Boolean active, String n){
-        new ChildModel().Create(id, gid, fn, ln, gender, sd, ed, bd, active, n); //TODO
+    public void CreateChild(int id, int[] gid, String fn, String ln, Gender gender, LocalDate sd, LocalDate ed, LocalDate bd, Boolean active, String n){
+        this.childList.add(new ChildModel(id, gid, fn, ln, gender, sd, ed, bd, active, n)); //TODO
+        
     }
-    public void ReadChild(int id){
+    public ChildModel ReadChild(int id){
+        return childList.get(id);
     }
-    public void UpdateChild(String fn, String ln, Gender gender, Date sd, Date ed, Date bd, String n){
+    public void UpdateChild(int id, String fn, String ln, Gender gender, LocalDate sd, LocalDate ed, LocalDate bd, String n){
+        // GET object from list via ID
+        // Set each attribute to each new parameter except ID
+        // Add to list .. and DB?
 
     }
     public void DeleteChild(int id){
-
+        childList.remove(id);
     }
+
+
 
     public void CreateGuardian(int id, int[] cid, int contid, String fn, String ln, Gender gender, int prio, String n){
         new GuardianModel().Create(id, cid, contid, fn, ln, gender, prio, n); //TODO
@@ -53,5 +57,13 @@ public class ListUtil
 
     }
     public void DeleteGuardian(int id){
+    }
+
+    public List<ChildModel> getChildList() {
+        return childList;
+    }
+
+    public void setChildList(List<ChildModel> childList) {
+        this.childList = childList;
     }
 }

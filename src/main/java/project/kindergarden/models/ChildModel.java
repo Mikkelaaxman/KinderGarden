@@ -3,9 +3,9 @@ package project.kindergarden.models;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.annotation.Id;
-import org.springframework.util.IdGenerator; //Brugbar?
 import project.kindergarden.data.Gender;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @EntityScan //Brugbar?
@@ -13,41 +13,46 @@ public class ChildModel{
     @Id
     int child_Id;
 
+    //Foreign Key
     int[] guardian_Id;
 
     String firstName;
     String lastName;
     Gender gender;
-    Date startDate;
-    Date endDate;
-    Date birthDate;
+    LocalDate startDate;
+    LocalDate endDate;
+    LocalDate birthDate;
     Boolean active;
     String note;
 
-    public void Create(int id, int[] gid, String fn, String ln, Gender gender, Date sd, Date ed, Date bd, Boolean active, String n) {
-        this.child_Id = id;
-        this.guardian_Id = gid;
-        this.firstName = fn;
-        this.lastName = ln;
+    public ChildModel(int child_Id, int[] guardian_Id, String firstName, String lastName, Gender gender, LocalDate startDate, LocalDate endDate, LocalDate birthDate, Boolean active, String note) {
+        this.child_Id = child_Id;
+        this.guardian_Id = guardian_Id;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.gender = gender;
-        this.child_Id = id;
-        this.startDate = sd;
-        this.endDate = ed; // TODO allow NULL??
-        this.birthDate = bd;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.birthDate = birthDate;
         this.active = active;
-        this.note = n;
+        this.note = note;
     }
 
-    public static ChildModel Read() {
-        return new ChildModel();
+    /**
+    public ChildModel Create(int id, int[] gid, String fn, String ln, Gender gender, Date sd, Date ed, Date bd, Boolean active, String n) {
+        return new ChildModel(id, gid, fn, ln, gender, sd, ed, bd, active, n);
+    }
+
+    public void Read() {
+
     }
 
 
     public void Update(int id, String fn, String ln, Gender gender, Date sd, Date ed, Date bd, String n) {
+
         this.firstName = fn;
         this.lastName = ln;
         this.gender = gender;
-        this.child_Id = id;
         this.startDate = sd;
         this.endDate = ed; // TODO allow NULL??
         this.birthDate = bd;
@@ -59,6 +64,7 @@ public class ChildModel{
         // SQL DROP CHILD WITH ID ?
     }
 
+**/
 
     /**************************************
      * GETTERS AND SETTERS BELOW
@@ -97,27 +103,27 @@ public class ChildModel{
         this.lastName = lastName;
     }
 
-    public Date getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 

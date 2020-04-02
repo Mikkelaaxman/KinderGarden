@@ -4,8 +4,13 @@ package project.kindergarden.controllers;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import project.kindergarden.data.Gender;
+import project.kindergarden.models.ListUtil;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/archive")
@@ -13,6 +18,7 @@ public class ArchiveController
 {
     ArrayList<test> list = new ArrayList<>();
     ModelAndView mv;
+    ListUtil listUtil = new ListUtil();
 
     public ArchiveController()
     {
@@ -64,6 +70,10 @@ public class ArchiveController
         list.add(new test(5,"emil5", "pretty clever"));
         list.add(new test(6,"emil6", "pretty good humor"));
 
+        listUtil.CreateChild(9999, new int[99], "THe", "Dude", Gender.M, LocalDate.parse("2020-05-22"), LocalDate.parse("1990-05-22"), LocalDate.parse("1990-05-22"), true, "Wheres my rug");
+        System.out.println(listUtil.getChildList().get(0).getBirthDate() );
+        listUtil.getChildList().get(0).setBirthDate(LocalDate.parse("1010-05-22"));
+        System.out.println(listUtil.getChildList().get(0).getBirthDate() + " THis means it works ");
     }
 
 
@@ -108,7 +118,7 @@ public class ArchiveController
     {
 
         mv = new ModelAndView();
-        mv.addObject("searchPattern", new String());
+        mv.addObject("searchPattern", "");
         mv.setViewName("archive");
         mv.addObject("list", list);
         mv.addObject("chosen", list.get(0)); // replace in model with a get by id
