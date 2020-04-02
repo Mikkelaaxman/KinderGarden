@@ -20,6 +20,15 @@ public class GuardianModel{
     //Contact
     int contact_Id;
 
+    public GuardianModel(int id, int[] child_Id, int contact_Id, String fn, String ln, Gender gender, int priority, String n) {
+        this.guardian_Id = id;
+        this.child_Id = child_Id;
+        this.contact_Id = contact_Id;
+        this.firstName = fn;
+        this.lastName = ln;
+
+    }
+
 
     public void Create(int id, int[] child_Id, int contact_Id, String firstName, String lastName, Gender gender, int priority, String n) {
 

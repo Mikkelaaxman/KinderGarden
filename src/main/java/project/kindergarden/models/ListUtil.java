@@ -15,7 +15,8 @@ public class ListUtil
 {
     ArrayList<Objects> masterList = new ArrayList<>();
     List<ChildModel> childList = new ArrayList<>();
-    
+    List<GuardianModel> guardianList = new ArrayList<>();
+
     /**
      *
      * @param id Childs ID
@@ -33,8 +34,17 @@ public class ListUtil
         this.childList.add(new ChildModel(id, gid, fn, ln, gender, sd, ed, bd, active, n)); //TODO
         
     }
+
     public ChildModel ReadChild(int id){
-        return childList.get(id);
+        int index = 0;
+
+        for (int i = 0; i<childList.size(); i++){
+            if (childList.get(i).getChild_Id() == id){
+                index = i;
+                break;
+            }
+        }
+        return childList.get(index);
     }
 
     public void UpdateChild(int id, String fn, String ln, Gender gender, LocalDate sd, LocalDate ed, LocalDate bd, Boolean act, String n){
@@ -59,7 +69,7 @@ public class ListUtil
 
 
     public void CreateGuardian(int id, int[] cid, int contid, String fn, String ln, Gender gender, int prio, String n){
-        new GuardianModel().Create(id, cid, contid, fn, ln, gender, prio, n); //TODO
+        this.guardianList.add(new GuardianModel(id, cid, contid, fn, ln, gender, prio, n)); //TODO
     }
     public void ReadGuardian(int id){
     }
