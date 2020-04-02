@@ -12,22 +12,14 @@ public class ContactModel {
     int zip;
     String city;
 
-    public void Create() {
-
-    }
-
-    public void Read() {
-
-    }
-
-
-    public void Update() {
-
-    }
-
-
-    public void Delete() {
-
+    public ContactModel(int contact_id, String phone, String email, String address, String houseNumber, int zip, String city) {
+        this.contact_id = contact_id;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+        this.houseNumber = houseNumber;
+        this.zip = zip;
+        this.city = city;
     }
 
     public int getContact_id() {

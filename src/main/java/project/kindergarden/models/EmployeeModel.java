@@ -4,10 +4,11 @@ import org.springframework.data.annotation.Id;
 import project.kindergarden.data.Gender;
 
 import java.time.LocalDate;
+import java.time.LocalDate;
 import java.util.Date;
 
-public class EmployeeModel  implements Person
-{
+public class EmployeeModel  {
+    @Id
     int employee_Id;
 
     String firstName;
@@ -31,11 +32,27 @@ public class EmployeeModel  implements Person
     //Contact
     int contact_Id;
 
-    @Override
-    public Person create(int id, int[] child_Id, int contact_Id, String firstName, String lastName, Gender gender, int priority, String n, int[] guardian_Id, LocalDate startDate, LocalDate endDate, LocalDate birthDate, Boolean active, String note) {
-        return null;
+    public EmployeeModel(int employee_Id, String firstName, String lastName, Gender gender, LocalDate startDate, LocalDate endDate, LocalDate birthDate, String note, String title, LocalDate title_from, LocalDate title_to, int salary, LocalDate salary_from, LocalDate salary_to, int contact_Id) {
+        this.employee_Id = employee_Id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.birthDate = birthDate;
+        this.note = note;
+        this.title = title;
+        this.title_from = title_from;
+        this.title_to = title_to;
+        this.salary = salary;
+        this.salary_from = salary_from;
+        this.salary_to = salary_to;
+        this.contact_Id = contact_Id;
     }
 
+    public void Create() {
+
+    }
 
 
     public void Read() {

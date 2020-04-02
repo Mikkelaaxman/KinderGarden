@@ -8,7 +8,7 @@ import java.util.Date;
 public class GuardianModel{
     @Id
     int guardian_Id;
-
+    //Child foreign keys
     int[] child_Id;
 
     String firstName;
@@ -26,28 +26,11 @@ public class GuardianModel{
         this.contact_Id = contact_Id;
         this.firstName = fn;
         this.lastName = ln;
-
+        this.gender = gender;
+        this.priority = priority;
+        this.note = n;
     }
 
-
-    public void Create(int id, int[] child_Id, int contact_Id, String firstName, String lastName, Gender gender, int priority, String n) {
-
-
-    }
-
-    public void Read() {
-
-    }
-
-
-    public void Update() {
-
-    }
-
-
-    public void Delete() {
-
-    }
 
     public int getGuardian_Id() {
         return guardian_Id;
