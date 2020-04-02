@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Parser
 {
 
-    public Parse()
+    public void Parse()
     {
 
     }

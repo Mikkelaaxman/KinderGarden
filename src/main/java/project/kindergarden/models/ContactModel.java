@@ -1,8 +1,11 @@
 package project.kindergarden.models;
 
 import org.springframework.data.annotation.Id;
+import project.kindergarden.data.Gender;
 
-public class ContactModel {
+import java.time.LocalDate;
+
+public class ContactModel implements Person{
     @Id
     int contact_id;
     String phone;
@@ -12,7 +15,11 @@ public class ContactModel {
     int zip;
     String city;
 
-    public ContactModel(int contact_id, String phone, String email, String address, String houseNumber, int zip, String city) {
+    public ContactModel(){
+
+    }
+
+    private ContactModel(int contact_id, String phone, String email, String address, String houseNumber, int zip, String city) {
         this.contact_id = contact_id;
         this.phone = phone;
         this.email = email;
@@ -22,6 +29,10 @@ public class ContactModel {
         this.city = city;
     }
 
+    @Override
+    public Person create(int id, int[] child_Id, int contact_Id, String firstName, String lastName, Gender gender, int priority, int[] guardian_Id, LocalDate startDate, LocalDate endDate, LocalDate birthDate, Boolean active, String note, String phone, String email, String address, String houseNumber, int zip, String city, String title, LocalDate title_from, LocalDate title_to, int salary, LocalDate salary_from, LocalDate salary_to) {
+        return new ContactModel(id, phone, email, address, houseNumber, zip, city);
+    }
 
     /**************************************
      * GETTERS AND SETTERS BELOW
@@ -81,4 +92,6 @@ public class ContactModel {
     public void setCity(String city) {
         this.city = city;
     }
+
+
 }
