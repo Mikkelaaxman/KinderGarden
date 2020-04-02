@@ -22,6 +22,10 @@ public class ContactModel {
         this.city = city;
     }
 
+
+    /**************************************
+     * GETTERS AND SETTERS BELOW
+     **************************************/
     public int getContact_id() {
         return contact_id;
     }

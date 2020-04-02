@@ -31,7 +31,9 @@ public class GuardianModel{
         this.note = n;
     }
 
-
+    /**************************************
+     * GETTERS AND SETTERS BELOW
+     **************************************/
     public int getGuardian_Id() {
         return guardian_Id;
     }

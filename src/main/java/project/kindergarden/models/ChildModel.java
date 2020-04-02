@@ -1,12 +1,8 @@
 package project.kindergarden.models;
 
-
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.data.annotation.Id;
 import project.kindergarden.data.Gender;
-
 import java.time.LocalDate;
-import java.util.Date;
+
 
 public class ChildModel implements Person{
 
@@ -23,34 +19,6 @@ public class ChildModel implements Person{
     LocalDate birthDate;
     Boolean active;
     String note;
-
-    /**
-     public ChildModel Create(int id, int[] gid, String fn, String ln, Gender gender, Date sd, Date ed, Date bd, Boolean active, String n) {
-     return new ChildModel(id, gid, fn, ln, gender, sd, ed, bd, active, n);
-     }
-
-     public void Read() {
-
-     }
-
-
-     public void Update(int id, String fn, String ln, Gender gender, Date sd, Date ed, Date bd, String n) {
-
-     this.firstName = fn;
-     this.lastName = ln;
-     this.gender = gender;
-     this.startDate = sd;
-     this.endDate = ed; // TODO allow NULL??
-     this.birthDate = bd;
-     this.note = n;
-
-     }
-
-     public void Delete(int id) {
-     // SQL DROP CHILD WITH ID ?
-     }
-
-     **/
 
     @Override
     public Person create(int id, int[] children_Id, int contact_Id, String firstName, String lastName, Gender gender, int priority, String n, int[] guardian_Id, LocalDate startDate, LocalDate endDate, LocalDate birthDate, Boolean active, String note)

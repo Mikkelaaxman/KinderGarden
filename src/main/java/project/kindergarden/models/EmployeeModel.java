@@ -51,21 +51,9 @@ public class EmployeeModel  {
 
     }
 
-
-    public void Read() {
-
-    }
-
-
-    public void Update() {
-
-    }
-
-
-    public void Delete() {
-
-    }
-
+    /**************************************
+     * GETTERS AND SETTERS BELOW
+     **************************************/
     public int getEmployee_Id() {
         return employee_Id;
     }
