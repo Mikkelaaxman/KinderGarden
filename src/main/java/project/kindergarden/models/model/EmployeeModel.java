@@ -6,7 +6,6 @@ import java.time.LocalDate;
 
 public class EmployeeModel {
     int employee_Id;
-
     String firstName;
     String lastName;
     Gender gender;
@@ -14,18 +13,12 @@ public class EmployeeModel {
     LocalDate endDate;
     LocalDate birthDate;
     String note;
-
-    //Title
     String title;
     LocalDate title_from;
     LocalDate title_to;
-
-    //Salary
     int salary;
     LocalDate salary_from;
     LocalDate salary_to;
-
-    //Contact
     int contact_Id;
 
 
