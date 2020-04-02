@@ -1,4 +1,6 @@
 package project.kindergarden.models.repository;
 
-public interface ChildRepository {
+public interface ChildRepository
+{
+
 }
