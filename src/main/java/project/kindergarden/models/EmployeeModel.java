@@ -4,7 +4,6 @@ import org.springframework.data.annotation.Id;
 import project.kindergarden.data.Gender;
 
 import java.time.LocalDate;
-import java.time.LocalDate;
 import java.util.Date;
 
 public class EmployeeModel  {
