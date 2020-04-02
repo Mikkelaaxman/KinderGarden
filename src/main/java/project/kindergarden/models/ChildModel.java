@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.util.Date;
 
 @EntityScan //Brugbar?
-public class ChildModel{
+public class ChildModel {
     @Id
     int child_Id;
 
