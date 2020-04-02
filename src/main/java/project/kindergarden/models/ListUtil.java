@@ -31,7 +31,7 @@ public class ListUtil
      * @param n Note
      */
     public void CreateChild(int id, int[] gid, String fn, String ln, Gender gender, LocalDate sd, LocalDate ed, LocalDate bd, Boolean active, String n){
-        this.childList.add(new ChildModel(id, gid, fn, ln, gender, sd, ed, bd, active, n)); //TODO
+        this.childList.add(new ChildModel().create(null, null, null, null,null, null,-1, null,null, null,null, null,null, null)); //TODO
         
     }
 

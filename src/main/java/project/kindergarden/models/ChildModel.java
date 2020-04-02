@@ -58,6 +58,11 @@ public class ChildModel implements Person{
         return new ChildModel(child_Id, guardian_Id, firstName,  lastName,  gender,  startDate,  endDate,  birthDate,  active, note);
     }
 
+    public ChildModel()
+    {
+
+    }
+
     private ChildModel(int child_Id, int[] guardian_Id, String firstName, String lastName, Gender gender, LocalDate startDate, LocalDate endDate, LocalDate birthDate, Boolean active, String note) {
         this.child_Id = child_Id;
         this.guardian_Id = guardian_Id;
