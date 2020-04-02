@@ -36,11 +36,21 @@ public class ListUtil
     public ChildModel ReadChild(int id){
         return childList.get(id);
     }
-    public void UpdateChild(int id, String fn, String ln, Gender gender, LocalDate sd, LocalDate ed, LocalDate bd, String n){
-        // GET object from list via ID
-        // Set each attribute to each new parameter except ID
-        // Add to list .. and DB?
 
+    public void UpdateChild(int id, String fn, String ln, Gender gender, LocalDate sd, LocalDate ed, LocalDate bd, Boolean act, String n){
+        // GET object from list via ID
+        ChildModel cm = childList.get(id);
+        // Set each attribute to each new parameter except ID
+        cm.setFirstName(fn);
+        cm.setLastName(ln);
+        cm.setGender(gender);
+        cm.setStartDate(sd);
+        cm.setEndDate(ed);
+        cm.setBirthDate(bd);
+        cm.setActive(act);
+        cm.setNote(n);
+        // Add back to list .. and DB?
+        childList.set(id, cm);
     }
     public void DeleteChild(int id){
         childList.remove(id);
