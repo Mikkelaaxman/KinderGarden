@@ -7,6 +7,10 @@ import java.util.ArrayList;
 public class Parser
 {
 
+    public Parse()
+    {
+
+    }
 
     public static ArrayList<Person> read()
     {
