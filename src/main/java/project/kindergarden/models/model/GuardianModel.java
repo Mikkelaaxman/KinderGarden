@@ -1,11 +1,12 @@
-package project.kindergarden.models;
+package project.kindergarden.models.model;
 
 import org.springframework.data.annotation.Id;
-import project.kindergarden.data.Gender;
+import project.kindergarden.models.data.Gender;
 
-import java.util.Date;
+import java.time.LocalDate;
 
-public class GuardianModel{
+public class GuardianModel
+{
     @Id
     int guardian_Id;
     //Child foreign keys
@@ -16,20 +17,11 @@ public class GuardianModel{
     Gender gender;
     int priority;
     String note;
-
-    //Contact
     int contact_Id;
 
-    public GuardianModel(int id, int[] child_Id, int contact_Id, String fn, String ln, Gender gender, int priority, String n) {
-        this.guardian_Id = id;
-        this.child_Id = child_Id;
-        this.contact_Id = contact_Id;
-        this.firstName = fn;
-        this.lastName = ln;
-        this.gender = gender;
-        this.priority = priority;
-        this.note = n;
-    }
+    public GuardianModel(){}
+
+
 
     /**************************************
      * GETTERS AND SETTERS BELOW

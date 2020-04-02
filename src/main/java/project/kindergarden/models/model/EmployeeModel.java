@@ -1,11 +1,10 @@
-package project.kindergarden.models;
+package project.kindergarden.models.model;
 
-import org.springframework.data.annotation.Id;
-import project.kindergarden.data.Gender;
+import project.kindergarden.models.data.Gender;
 
 import java.time.LocalDate;
 
-public class EmployeeModel  {
+public class EmployeeModel {
     int employee_Id;
 
     String firstName;
@@ -29,27 +28,7 @@ public class EmployeeModel  {
     //Contact
     int contact_Id;
 
-    public EmployeeModel(int employee_Id, String firstName, String lastName, Gender gender, LocalDate startDate, LocalDate endDate, LocalDate birthDate, String note, String title, LocalDate title_from, LocalDate title_to, int salary, LocalDate salary_from, LocalDate salary_to, int contact_Id) {
-        this.employee_Id = employee_Id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.gender = gender;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.birthDate = birthDate;
-        this.note = note;
-        this.title = title;
-        this.title_from = title_from;
-        this.title_to = title_to;
-        this.salary = salary;
-        this.salary_from = salary_from;
-        this.salary_to = salary_to;
-        this.contact_Id = contact_Id;
-    }
 
-    public void Create() {
-
-    }
 
     /**************************************
      * GETTERS AND SETTERS BELOW

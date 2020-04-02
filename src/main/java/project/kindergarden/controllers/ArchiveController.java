@@ -4,14 +4,11 @@ package project.kindergarden.controllers;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import project.kindergarden.data.Gender;
-import project.kindergarden.models.ChildModel;
-import project.kindergarden.models.ListUtil;
+import project.kindergarden.models.data.Gender;
+import project.kindergarden.models.model.ChildModel;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 @RestController
 @RequestMapping(value = "/archive")

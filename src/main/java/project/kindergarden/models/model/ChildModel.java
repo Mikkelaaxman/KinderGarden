@@ -1,10 +1,10 @@
-package project.kindergarden.models;
+package project.kindergarden.models.model;
 
-import project.kindergarden.data.Gender;
+import project.kindergarden.models.data.Gender;
 import java.time.LocalDate;
 
 
-public class ChildModel implements Person{
+public class ChildModel {
 
     int child_Id;
 
@@ -19,31 +19,6 @@ public class ChildModel implements Person{
     LocalDate birthDate;
     Boolean active;
     String note;
-
-
-    @Override
-    public Person create(int id, int[] child_Id, int contact_Id, String firstName, String lastName, Gender gender, int priority, int[] guardian_Id, LocalDate startDate, LocalDate endDate, LocalDate birthDate, Boolean active, String note, String phone, String email, String address, String houseNumber, int zip, String city, String title, LocalDate title_from, LocalDate title_to, int salary, LocalDate salary_from, LocalDate salary_to) {
-        return new ChildModel(id, guardian_Id, firstName,  lastName,  gender,  startDate,  endDate,  birthDate,  active, note);
-    }
-
-    public ChildModel()
-    {
-
-    }
-
-    private ChildModel(int child_Id, int[] guardian_Id, String firstName, String lastName, Gender gender, LocalDate startDate, LocalDate endDate, LocalDate birthDate, Boolean active, String note) {
-        this.child_Id = child_Id;
-        this.guardian_Id = guardian_Id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.gender = gender;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.birthDate = birthDate;
-        this.active = active;
-        this.note = note;
-    }
-
 
 
     /**************************************
