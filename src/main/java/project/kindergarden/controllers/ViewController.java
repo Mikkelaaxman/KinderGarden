@@ -17,7 +17,7 @@ public class ViewController
      * @param model
      * @return
      */
-    @RequestMapping("/")
+    @RequestMapping("")
     public String index(Model model)
     {
         return "index";

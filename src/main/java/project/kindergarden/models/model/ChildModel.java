@@ -1,5 +1,6 @@
 package project.kindergarden.models.model;
 
+import org.springframework.data.jpa.repository.Query;
 import project.kindergarden.models.data.Gender;
 
 import javax.persistence.*;

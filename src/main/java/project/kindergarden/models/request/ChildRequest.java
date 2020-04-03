@@ -12,19 +12,47 @@ Therefore, the only two values that are needed for a request are First Name and 
 
 
 
-public class ChildRequest
+public class ChildRequest //the constructor values needed
 {
     private String firstName;
     private String lastName;
 
-
-    public String getFirstName()
-    {
+    public String getFirstName() {
         return firstName;
     }
 
-    public String getLastName()
-    {
+    public String getLastName() {
         return lastName;
     }
+
+    public String getKid_birthdate() {
+        return kid_birthdate;
+    }
+
+    public String getKid_startdate() {
+        return kid_startdate;
+    }
+
+    public String getKid_enddate() {
+        return kid_enddate;
+    }
+
+    public String getKid_note() {
+        return kid_note;
+    }
+
+    private String kid_birthdate;
+    private String kid_startdate;
+    private String kid_enddate;
+    private String kid_note;
+
+    public ChildRequest(String firstName, String lastName, String kid_birthdate, String kid_startdate, String kid_note) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.kid_birthdate = kid_birthdate;
+        this.kid_startdate = kid_startdate;
+        this.kid_note = kid_note;
+    }
+
+
 }
