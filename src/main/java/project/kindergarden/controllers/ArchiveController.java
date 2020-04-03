@@ -16,15 +16,9 @@ public class ArchiveController
 {
     ArrayList<ChildModel> list = new ArrayList<>();
     ModelAndView mv;
-    ListUtil listUtil = new ListUtil();
 
     public ArchiveController()
     {
-        list = (ArrayList<ChildModel>) listUtil.getChildList();
-        listUtil.CreateChild(9999, new int[99], "THe", "Dude", Gender.M, LocalDate.parse("2020-05-22"), LocalDate.parse("1990-05-22"), LocalDate.parse("1990-05-22"), true, "Wheres my rug");
-        System.out.println(listUtil.getChildList().get(0).getBirthDate() );
-        listUtil.getChildList().get(0).setBirthDate(LocalDate.parse("1010-05-22"));
-        System.out.println(listUtil.getChildList().get(0).getBirthDate() + " THis means it works ");
     }
 
 
@@ -45,10 +39,10 @@ public class ArchiveController
     {
         mv= new ModelAndView();
         mv.setViewName("archive");
-        mv.addObject("list", list);
+        mv.addObject("list", -1);
 
         int i = Integer.parseInt(id);
-        mv.addObject("chosen", listUtil.ReadChild(i)); // replace in model with a get by id
+        mv.addObject("chosen",-1); // replace in model with a get by id
         return mv;
     }
 
@@ -68,8 +62,8 @@ public class ArchiveController
         mv = new ModelAndView();
         mv.addObject("searchPattern", "");
         mv.setViewName("archive");
-        mv.addObject("list", list);
-        mv.addObject("chosen", list.get(0)); // replace in model with a get by id
+        mv.addObject("list", -1);
+        mv.addObject("chosen",-1); // replace in model with a get by id
         return mv;
     }
 

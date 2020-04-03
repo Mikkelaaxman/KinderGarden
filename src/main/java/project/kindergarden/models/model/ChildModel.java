@@ -107,4 +107,8 @@ public class ChildModel {
     }
 
 
+    public int getId()
+    {
+        return child_Id;
+    }
 }
