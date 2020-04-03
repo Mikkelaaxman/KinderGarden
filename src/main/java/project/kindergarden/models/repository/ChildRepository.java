@@ -21,4 +21,7 @@ public interface ChildRepository extends JpaRepository<ChildModel, Integer>
 
     @Query(value = "SELECT * from KID kid where kid_id=?1", nativeQuery = true)
     ChildModel findKidById( Integer id);
+
+
+
 }

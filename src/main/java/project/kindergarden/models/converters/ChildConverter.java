@@ -6,6 +6,8 @@ import project.kindergarden.models.request.ChildRequest;
 import project.kindergarden.models.response.Child;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
 public class ChildConverter implements ModelConverter<ChildRequest, ChildModel, Child>
@@ -40,5 +42,27 @@ public class ChildConverter implements ModelConverter<ChildRequest, ChildModel, 
         */
 
         return response;
+    }
+
+    public List<Child> modelToResponse(List<ChildModel> listModel)
+    {
+
+        List<Child> result = new ArrayList<Child>();
+
+        for (ChildModel model: listModel)
+        {
+            Child response = new Child();
+            response.setId(model.getKid_id());
+            response.setFirstName(model.getFirstName());
+            response.setLastName(model.getLastName());
+            /*
+               response.setBirthDate(model.getBirthDate());
+               response.setEndDate(model.getEndDate());
+               response.setStartDate(model.getStartDate());
+            */
+            result.add(response);
+        }
+
+        return result;
     }
 }
