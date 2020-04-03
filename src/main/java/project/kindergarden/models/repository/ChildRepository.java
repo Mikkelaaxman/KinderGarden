@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import project.kindergarden.models.model.ChildModel;
 
+import javax.ws.rs.QueryParam;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,5 +16,9 @@ public interface ChildRepository extends JpaRepository<ChildModel, Integer>
 {
 
     @Query(value = "SELECT * FROM kid", nativeQuery = true)
-    String[] findthis();
+    List<ChildModel> findAllKids();
+
+
+    @Query(value = "SELECT * from KID kid where kid_id=?1", nativeQuery = true)
+    ChildModel findKidById( Integer id);
 }

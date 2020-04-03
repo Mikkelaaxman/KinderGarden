@@ -50,23 +50,19 @@ public class ArchiveController
         // sets a model and view
         mv= new ModelAndView();
         mv.setViewName("archive");
-        mv.addObject("chosen", repo.findthis());
-
-
-        System.out.println(repo.findthis().length);;
-        mv.addObject("list",repo.findthis());
+        mv.addObject("chosen", repo.findAllKids().get(0));
+        mv.addObject("list",repo.findAllKids());
         return mv;
     }
 
 
     @GetMapping(value = "/get{id}")
-    public ModelAndView getPerson(@PathVariable("id") String id)
+    public ModelAndView getPerson(@PathVariable("id") int id)
     {
         mv= new ModelAndView();
         mv.setViewName("archive");
-        mv.addObject("list", new String[]{"hello"});
-
-        mv.addObject("chosen", -1); // replace in model with a get by id
+        mv.addObject("chosen", repo.findKidById(id));
+        mv.addObject("list",repo.findAllKids());
         return mv;
     }
 

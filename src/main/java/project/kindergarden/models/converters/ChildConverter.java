@@ -17,16 +17,8 @@ public class ChildConverter implements ModelConverter<ChildRequest, ChildModel, 
         ChildModel model = new ChildModel();
         model.setFirstName(request.getFirstName());
         model.setLastName(request.getLastName());
-
-        String[] dateString = request.getKid_startdate().split("-");
-        LocalDate date = LocalDate.of(Integer.parseInt(dateString[0]),Integer.parseInt(dateString[1]), Integer.parseInt(dateString[2]));
-
-        model.setStartDate(date);
-
-        dateString = request.getKid_startdate().split("-");
-        date = LocalDate.of(Integer.parseInt(dateString[0]),Integer.parseInt(dateString[1]), Integer.parseInt(dateString[2]));
-
-        model.setBirthDate(date);
+        model.setStartDate(request.getKid_startdate());
+        model.setBirthDate(request.getKid_birthdate() );
 
         return model;
     }
@@ -41,10 +33,11 @@ public class ChildConverter implements ModelConverter<ChildRequest, ChildModel, 
         response.setId(model.getKid_id());
         response.setFirstName(model.getFirstName());
         response.setLastName(model.getLastName());
+        /*
         response.setBirthDate(model.getBirthDate());
         response.setEndDate(model.getEndDate());
         response.setStartDate(model.getStartDate());
-
+        */
 
         return response;
     }

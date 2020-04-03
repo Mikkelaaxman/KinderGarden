@@ -20,11 +20,18 @@ public class ChildModel
     @Column(name = "kid_lastname")
     String lastName;
     @Column(name = "kid_startdate")
-    LocalDate startDate;
+    String startDate;
     @Column(name = "kid_enddate")
-    LocalDate endDate;
+    String endDate;
     @Column(name = "kid_birthdate")
-    LocalDate birthDate;
+    String birthDate;
+    @Column(name = "kid_note")
+    String note;
+
+    /**************************************
+     * GETTERS AND SETTERS BELOW
+     **************************************/
+
 
     public int getKid_id() {
         return kid_id;
@@ -50,37 +57,30 @@ public class ChildModel
         this.lastName = lastName;
     }
 
-    public LocalDate getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
-    }
-
-    public LocalDate getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalDate endDate) {
-        this.endDate = endDate;
-    }
-
-    public LocalDate getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
+
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
 
-    public Boolean getActive() {
-        return active;
-    }
-
-    public void setActive(Boolean active) {
-        this.active = active;
-    }
 
     public String getNote() {
         return note;
@@ -90,14 +90,7 @@ public class ChildModel
         this.note = note;
     }
 
-    @Column(name = "kid_gender")
-    Boolean active;
-    @Column(name = "kid_note")
-    String note;
 
 
-    /**************************************
-     * GETTERS AND SETTERS BELOW
-     **************************************/
 
 }
