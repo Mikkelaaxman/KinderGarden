@@ -7,14 +7,14 @@ import project.kindergarden.models.model.GuardianModel;
 
 import java.util.List;
 
-public interface GuardianRepository extends JpaRepository<ChildModel, Integer>
+public interface GuardianRepository extends JpaRepository<GuardianModel, Integer>
 {
 
     @Query(value = "SELECT * FROM guardian", nativeQuery = true)
     List<ChildModel> findAllGuardians();
 
 
-    @Query(value = "SELECT guardian.* FROM guardian  INNER JOIN kid ON kid_id = guardian_id WHERE guardian_id = ?1", nativeQuery = true)
+    @Query(value = "SELECT * from guardian WHERE mykid_id = ?1", nativeQuery = true)
     GuardianModel findGuardianByKidId(Integer id);
 
 
