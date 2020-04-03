@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Archives</title>
+    <link href="../static/css/archive.css" rel="stylesheet" th:href="@{/static/css/archive.css}" type="text/css" />
+</head>
+<body>
+<section class= "selection-menu">
+    <div class="search-bar">
+        <form >
+            <input type="text" id="datePlanted" name="datePlanted" />
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div class="tableDiv">
+        <table>
+            <tbody>
+            <tr th:each="person : ${ModelService.getAll()}" >
+                <td>
+                    <form method="get" th:action="@{/archive/get{id}(id=${person.getId()})}">
+                        <button class="list-button" type="submit"> <a th:text="${person.getFirstName() +' '+ person.getLastName() }"></a> </button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+<section class="informationSection" >
+
+    <div class="image-banner">
+        <div class="image-container">
+            <img class="picture" alt="error" src="../static/images/person_1.png" style="float: left"> <!-- todo replace with model supplied image-->
+        </div>
+    </div>
+
+    <ul>
+        <li th:text="'Firstname :                      '+${chosen.getFirstName()}"></li>
+        <li th:text="'Lastname :                       '+${chosen.getLastName()}"></li>
+        <li th:text="'Guardians first name :           '+${ModelService.getChildsGuardian(chosen.getId()).getFirstName()}"></li>
+        <li th:text="'Guardians first name :           '+${ModelService.getChildsGuardian(chosen.getId()).getLastName()}"></li>
+        <li th:text="'Address :                        '+${ModelService.getChildsGuardian(chosen.getId()).getCity()+'  '+ModelService.getChildsGuardian(chosen.getId()).getPostalcode() }"></li>
+        <li th:text="'Email :                          '+${ModelService.getChildsGuardian(chosen.getId()).getGmail()}"></li>
+        <li th:text="'Telephone number :               '+${ModelService.getChildsGuardian(chosen.getId()).getTelephone()}"></li>
+    </ul>
+    <div class="note">
+
+    </div>
+
+
+
+
+
+
+
+
+</section>
+</body>
+</html>
