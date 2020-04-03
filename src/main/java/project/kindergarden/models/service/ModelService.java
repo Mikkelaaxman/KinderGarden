@@ -3,6 +3,7 @@ package project.kindergarden.models.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import project.kindergarden.models.converters.ChildConverter;
 import project.kindergarden.models.model.ChildModel;
 import project.kindergarden.models.model.GuardianModel;
@@ -11,7 +12,6 @@ import project.kindergarden.models.repository.GuardianRepository;
 import project.kindergarden.models.request.ChildRequest;
 import project.kindergarden.models.response.Child;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
