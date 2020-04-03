@@ -38,7 +38,7 @@ public class ChildConverter implements ModelConverter<ChildRequest, ChildModel, 
         Child response = new Child();
 
 
-        response.setId(model.getChild_Id());
+        response.setId(model.getKid_id());
         response.setFirstName(model.getFirstName());
         response.setLastName(model.getLastName());
         response.setBirthDate(model.getBirthDate());

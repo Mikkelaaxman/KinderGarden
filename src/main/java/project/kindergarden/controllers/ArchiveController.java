@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import project.kindergarden.models.model.ChildModel;
+import project.kindergarden.models.repository.ChildRepository;
 import project.kindergarden.models.request.ChildRequest;
 import project.kindergarden.models.response.Child;
 import project.kindergarden.models.service.ChildService;
@@ -18,6 +19,9 @@ public class ArchiveController
 {
     @Autowired
     ChildService service;
+
+    @Autowired
+    ChildRepository repo;
 
 
     ArrayList<ChildModel> list = new ArrayList<>();
@@ -40,11 +44,17 @@ public class ArchiveController
     @GetMapping(value = "")
     public ModelAndView getAll(Model model)
     {
+
+
+
         // sets a model and view
         mv= new ModelAndView();
         mv.setViewName("archive");
-        mv.addObject("chosen", list.get(0));
-        mv.addObject("list", list);
+        mv.addObject("chosen", repo.findthis());
+
+
+        System.out.println(repo.findthis().length);;
+        mv.addObject("list",repo.findthis());
         return mv;
     }
 
@@ -54,10 +64,9 @@ public class ArchiveController
     {
         mv= new ModelAndView();
         mv.setViewName("archive");
-        mv.addObject("list", -1);
+        mv.addObject("list", new String[]{"hello"});
 
-        int i = Integer.parseInt(id);
-        mv.addObject("chosen",-1); // replace in model with a get by id
+        mv.addObject("chosen", -1); // replace in model with a get by id
         return mv;
     }
 

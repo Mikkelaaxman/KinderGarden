@@ -19,8 +19,8 @@
             <tbody>
             <tr th:each="person : ${list}" >
                 <td>
-                    <form method="get" th:action="@{/archive/get{id}(id=${person.getChild_Id()})}">
-                        <button class="list-button" type="submit"> <a th:text="${person.getFirstName()} + ' ' +${person.getLastName()}"></a> </button>
+                    <form method="get" th:action="@{/archive/get{id}(id=${1})}">
+                        <button class="list-button" type="submit"> <a th:text="${''}"></a> </button>
                     </form>
                 </td>
             </tr>
@@ -58,7 +58,7 @@
                 <p>First name</p>
             </div>
             <div class="first name-value" >
-                <p th:text="${chosen.getFirstName()}"></p>
+                <p th:text="${chosen}"></p>
             </div>
         </div>
 
@@ -68,14 +68,14 @@
                 <p> Last name</p>
             </div>
             <div class="last name-value" >
-                <p th:text="${chosen.getLastName()}"></p>
+                <p th:text="${chosen}"></p>
             </div>
         </div>
 
 
         <div class="info-3">
             <div class="info">
-                <p th:text="${chosen.getBirthDate()}"></p>
+                <p th:text="${chosen}"></p>
             </div>
         </div>
 

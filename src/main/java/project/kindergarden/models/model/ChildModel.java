@@ -1,8 +1,5 @@
 package project.kindergarden.models.model;
 
-import org.springframework.data.jpa.repository.Query;
-import project.kindergarden.models.data.Gender;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -15,7 +12,7 @@ public class ChildModel
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "kid_id")
-    int child_Id;
+    int kid_id;
 
 
     @Column(name = "kid_firstname")
@@ -29,12 +26,12 @@ public class ChildModel
     @Column(name = "kid_birthdate")
     LocalDate birthDate;
 
-    public int getChild_Id() {
-        return child_Id;
+    public int getKid_id() {
+        return kid_id;
     }
 
-    public void setChild_Id(int child_Id) {
-        this.child_Id = child_Id;
+    public void setKid_id(int child_Id) {
+        this.kid_id = child_Id;
     }
 
     public String getFirstName() {
