@@ -10,16 +10,20 @@ public class ChildConverter implements ModelConverter<ChildRequest, ChildModel, 
 {
 
     @Override
-    public ChildModel requestToModel(ChildRequest request) {
+    public ChildModel requestToModel(ChildRequest request)
+    {
         ChildModel model = new ChildModel();
         model.setFirstName(request.getFirstName());
         model.setLastName(request.getLastName());
         return model;
     }
+
+
     @Override
-    public Child modelToResponse(ChildModel model) {
+    public Child modelToResponse(ChildModel model)
+    {
         Child response = new Child();
-        response.setId(model.getId());
+        response.setId(model.getChild_Id());
         response.setFirstName(model.getFirstName());
         response.setLastName(model.getLastName());
         return response;

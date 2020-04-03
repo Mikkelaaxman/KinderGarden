@@ -18,9 +18,6 @@ public class ChildRequest
     private String lastName;
 
 
-    public ChildRequest() {
-    }
-
     public String getFirstName()
     {
         return firstName;

@@ -12,7 +12,7 @@ public class ChildModel
 {
 
     @Id
-    @GeneratedValue()
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "kid_id")
     int child_Id;
 

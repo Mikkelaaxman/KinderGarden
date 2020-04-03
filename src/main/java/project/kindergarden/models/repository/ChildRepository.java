@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import project.kindergarden.models.model.ChildModel;
 
 @Repository
-public interface ChildRepository extends JpaRepository<ChildModel, Long>
+public interface ChildRepository extends JpaRepository<ChildModel, Integer>
 {
 
 }

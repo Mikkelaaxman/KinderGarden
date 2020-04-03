@@ -1,23 +1,20 @@
 package project.kindergarden.models.model;
 
-import org.springframework.data.annotation.Id;
+
 import project.kindergarden.models.data.Gender;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "guardian")
-public class Guardian<ENUM>
+public class GuardianModel
 {
 
     @Id
     @GeneratedValue()
     @Column(name = "guardian_id")
-    String guardian_Id;
+    int guardian_id;
 
 
     @Column(name = "guardian_firstname")
@@ -36,30 +33,23 @@ public class Guardian<ENUM>
     String city;
     @Column(name = "g_mail")
     String gmail;
-    @Column(name = "gender")
-    ENUM gender;
+
     @Column(name = "note")
     String note;
-
 
 
 
     /**************************************
      * GETTERS AND SETTERS BELOW
      **************************************/
-    public int getGuardian_Id() {
-        return guardian_Id;
+
+    public int getGuardian_id() {
+        return guardian_id;
     }
 
-    public void setGuardian_Id(int guardian_Id) {
-        this.guardian_Id = guardian_Id;
+    public void setGuardian_id(int guardian_id) {
+        this.guardian_id = guardian_id;
     }
-
-    public int[] getChild_Id() {
-        return child_Id;
-    }
-
-    public void setChild_Id(int[] child_Id) { this.child_Id = child_Id; }
 
     public String getFirstName() {
         return firstName;
@@ -77,20 +67,52 @@ public class Guardian<ENUM>
         this.lastName = lastName;
     }
 
-    public Gender getGender() {
-        return gender;
+    public String getTelephone() {
+        return telephone;
     }
 
-    public void setGender(Gender gender) {
-        this.gender = gender;
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
     }
 
-    public int getPriority() {
-        return priority;
+    public String getPostalcode() {
+        return postalcode;
     }
 
-    public void setPriority(int priority) {
-        this.priority = priority;
+    public void setPostalcode(String postalcode) {
+        this.postalcode = postalcode;
+    }
+
+    public String getStreetname() {
+        return streetname;
+    }
+
+    public void setStreetname(String streetname) {
+        this.streetname = streetname;
+    }
+
+    public String getStreetnumber() {
+        return streetnumber;
+    }
+
+    public void setStreetnumber(String streetnumber) {
+        this.streetnumber = streetnumber;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getGmail() {
+        return gmail;
+    }
+
+    public void setGmail(String gmail) {
+        this.gmail = gmail;
     }
 
     public String getNote() {
@@ -99,13 +121,7 @@ public class Guardian<ENUM>
 
     public void setNote(String note) {
         this.note = note;
+
     }
 
-    public int getContact_Id() {
-        return contact_Id;
-    }
-
-    public void setContact_Id(int contact_Id) {
-        this.contact_Id = contact_Id;
-    }
 }
