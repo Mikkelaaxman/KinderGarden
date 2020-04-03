@@ -1,23 +1,35 @@
 package project.kindergarden.models.model;
 
 import project.kindergarden.models.data.Gender;
+
+import javax.persistence.*;
 import java.time.LocalDate;
 
 
-public class ChildModel {
+@Entity
+@Table(name = "kid")
+public class Kid
+{
 
-    int child_Id;
+    @Id
+    @GeneratedValue()
+    @Column(name = "child_id")
+    String child_Id;
 
-    //Foreign Key
-    int[] guardian_Id;
 
+    @Column(name = "kid_firstname")
     String firstName;
+    @Column(name = "kid_lastname")
     String lastName;
-    Gender gender;
+    @Column(name = "kid_startdate")
     LocalDate startDate;
+    @Column(name = "kid_enddate")
     LocalDate endDate;
+    @Column(name = "kid_birthdate")
     LocalDate birthDate;
+    @Column(name = "kid_gender")
     Boolean active;
+    @Column(name = "kid_note")
     String note;
 
 

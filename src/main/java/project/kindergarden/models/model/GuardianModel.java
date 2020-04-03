@@ -3,23 +3,44 @@ package project.kindergarden.models.model;
 import org.springframework.data.annotation.Id;
 import project.kindergarden.models.data.Gender;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Table;
 import java.time.LocalDate;
 
-public class GuardianModel
+@Entity
+@Table(name = "guardian")
+public class Guardian<ENUM>
 {
+
     @Id
-    int guardian_Id;
-    //Child foreign keys
-    int[] child_Id;
+    @GeneratedValue()
+    @Column(name = "guardian_id")
+    String guardian_Id;
 
+
+    @Column(name = "guardian_firstname")
     String firstName;
+    @Column(name = "guardian_lastname")
     String lastName;
-    Gender gender;
-    int priority;
+    @Column(name = "parenttelephone")
+    String telephone;
+    @Column(name = "postalcode")
+    String postalcode;
+    @Column(name = "streetname")
+    String streetname;
+    @Column(name = "streetnumber")
+    String streetnumber;
+    @Column(name = "city")
+    String city;
+    @Column(name = "g_mail")
+    String gmail;
+    @Column(name = "gender")
+    ENUM gender;
+    @Column(name = "note")
     String note;
-    int contact_Id;
 
-    public GuardianModel(){}
 
 
 
