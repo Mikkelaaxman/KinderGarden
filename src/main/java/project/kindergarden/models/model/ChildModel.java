@@ -8,13 +8,13 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "kid")
-public class Kid
+public class ChildModel
 {
 
     @Id
     @GeneratedValue()
-    @Column(name = "child_id")
-    String child_Id;
+    @Column(name = "kid_id")
+    int child_Id;
 
 
     @Column(name = "kid_firstname")
@@ -27,16 +27,6 @@ public class Kid
     LocalDate endDate;
     @Column(name = "kid_birthdate")
     LocalDate birthDate;
-    @Column(name = "kid_gender")
-    Boolean active;
-    @Column(name = "kid_note")
-    String note;
-
-
-    /**************************************
-     * GETTERS AND SETTERS BELOW
-     **************************************/
-
 
     public int getChild_Id() {
         return child_Id;
@@ -44,14 +34,6 @@ public class Kid
 
     public void setChild_Id(int child_Id) {
         this.child_Id = child_Id;
-    }
-
-    public int[] getGuardian_Id() {
-        return guardian_Id;
-    }
-
-    public void setGuardian_Id(int[] guardian_Id) {
-        this.guardian_Id = guardian_Id;
     }
 
     public String getFirstName() {
@@ -68,22 +50,6 @@ public class Kid
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public Gender getGender() {
-        return gender;
-    }
-
-    public void setGender(Gender gender) {
-        this.gender = gender;
-    }
-
-    public Boolean getActive() {
-        return active;
-    }
-
-    public void setActive(Boolean active) {
-        this.active = active;
     }
 
     public LocalDate getStartDate() {
@@ -110,6 +76,14 @@ public class Kid
         this.birthDate = birthDate;
     }
 
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
     public String getNote() {
         return note;
     }
@@ -118,9 +92,14 @@ public class Kid
         this.note = note;
     }
 
+    @Column(name = "kid_gender")
+    Boolean active;
+    @Column(name = "kid_note")
+    String note;
 
-    public int getId()
-    {
-        return child_Id;
-    }
+
+    /**************************************
+     * GETTERS AND SETTERS BELOW
+     **************************************/
+
 }
