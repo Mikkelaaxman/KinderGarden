@@ -8,6 +8,8 @@ HELP.md
 *.iml
 *.ipr
 
+*.properties
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
